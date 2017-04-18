@@ -15,4 +15,9 @@ public class Card {
   public String getValue() {
     return value;
   }
+
+  @Override
+  public String toString() {
+    return color + " " + value;
+  }
 }
