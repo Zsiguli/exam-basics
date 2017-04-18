@@ -36,15 +36,15 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
-8:   
+1:signature   
+2:return type   
+3:method name
+4:parameter type   
+5:parameter name
+6:variable type and name
+7:method body
+8:return statement   
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+Constructor is a method which runs if a create a new object form a class with the new keyword. This method initializes the starting propertys of an object. I can provide more constructors and the program will decide which to run based on the given arguments. In case of no constructos where provided the properties will init empty.
