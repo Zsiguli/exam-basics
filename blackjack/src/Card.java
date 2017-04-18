@@ -7,4 +7,8 @@ public class Card {
     this.color = color;
     this.value = value;
   }
+
+  public String getColor() {
+    return color;
+  }
 }
