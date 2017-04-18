@@ -9,7 +9,9 @@ public class Deck {
 
   public Deck(int numberOfCardsInTheDeck) {
     for (int i = 0; i < numberOfCardsInTheDeck; ++i) {
-      cardList.add(new Card(colors[0], values[0]));
+      int randomColor = (int) Math.random() * 4;
+      int randomValue = (int) Math.random() * 13;
+      cardList.add(new Card(colors[randomColor], values[randomValue]));
     }
   }
 
