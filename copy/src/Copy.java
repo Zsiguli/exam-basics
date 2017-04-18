@@ -1,3 +1,10 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Copy {
   public static void main(String[] args) {
     // This should be the basic replica of the 'cp' command
@@ -12,6 +19,22 @@ public class Copy {
       System.out.println("copy [source] [destination]");
     } else if (args.length == 1) {
       System.out.println("No destination provided");
+    } else if (args.length == 2) {
+      Path source = Paths.get(args[0]);
+      Path destination = Paths.get(args[1]);
+      List<String> dataFromFile = new ArrayList<>();
+      try {
+        dataFromFile = Files.readAllLines(source);
+      } catch (IOException e) {
+        System.out.println("Sorry there was a problem during the file read. Please try it again!");
+      }
+      if (!dataFromFile.isEmpty()) {
+        try {
+          Files.write(destination, dataFromFile);
+        } catch (IOException e) {
+          System.out.println("Sorry there was a problem during the file write. Please try it again!");
+        }
+      }
     }
   }
 }
