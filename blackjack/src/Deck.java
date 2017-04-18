@@ -46,6 +46,7 @@ public class Deck {
 
   public Card draw() {
     Card drawn = cardList.get(0);
+    cardList.remove(0);
     return drawn;
   }
 }
