@@ -5,13 +5,13 @@ public class Deck {
   final static String[] colors = {"Clubs", "Diamonds", "Hearts", "Spades"};
   final static String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
 
-  List<Card> cardList = new ArrayList<>();
+  List<Card> actualDeck = new ArrayList<>();
 
   public Deck(int numberOfCardsInTheDeck) {
     int colorController = (int) (Math.random() * 4);
     for (int i = 0; i < numberOfCardsInTheDeck; ++i) {
       int randomValue = (int) (Math.random() * 13);
-      cardList.add(new Card(colors[colorController++ % 4], values[randomValue]));
+      actualDeck.add(new Card(colors[colorController++ % 4], values[randomValue]));
     }
   }
 
@@ -23,7 +23,7 @@ public class Deck {
     int amountOfHearts = 0;
     int amountOfSpades = 0;
 
-    for (Card card : cardList) {
+    for (Card card : actualDeck) {
       switch (card.getColor()) {
         case "Clubs":
           ++amountOfClubs;
@@ -40,7 +40,7 @@ public class Deck {
       }
     }
 
-    asString += cardList.size() + " cards -  ";
+    asString += actualDeck.size() + " cards -  ";
     asString += amountOfClubs + " Clubs, ";
     asString += amountOfDiamonds + " Diamonds, ";
     asString += amountOfHearts + " Hearts, ";
@@ -49,18 +49,18 @@ public class Deck {
   }
 
   public Card draw() {
-    Card drawn = cardList.get(0);
-    cardList.remove(0);
+    Card drawn = actualDeck.get(0);
+    actualDeck.remove(0);
     return drawn;
   }
 
   public void shuffle() {
     List<Card> temp = new ArrayList<>();
     do {
-      int randomCard = (int) (Math.random() * cardList.size());
-      temp.add(cardList.get(randomCard));
-      cardList.remove(randomCard);
-    } while (cardList.size() > 0);
-    cardList = temp;
+      int randomCard = (int) (Math.random() * actualDeck.size());
+      temp.add(actualDeck.get(randomCard));
+      actualDeck.remove(randomCard);
+    } while (actualDeck.size() > 0);
+    actualDeck = temp;
   }
 }
