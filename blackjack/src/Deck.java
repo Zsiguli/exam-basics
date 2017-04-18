@@ -18,11 +18,29 @@ public class Deck {
   @Override
   public String toString() {
     String asString = new String();
+    int amountOfClubs = 0;
+    int amountOfDiamonds = 0;
+    int amountOfHearts = 0;
+    int amountOfSpades = 0;
+
+    for (Card card : cardList) {
+      switch (card.getColor()) {
+        case "Clubs" : ++amountOfClubs;
+        break;
+        case "Diamonds" : ++amountOfDiamonds;
+        break;
+        case "Hearts" : ++amountOfHearts;
+        break;
+        case "Spades" : ++amountOfSpades;
+        break;
+      }
+    }
+
     asString += cardList.size() + " cards -  ";
-    asString += "num" + " Clubs, ";
-    asString += "num" + " Diamonds, ";
-    asString += "num" + " Hearts, ";
-    asString += "num" + " Spades";
+    asString += amountOfClubs + " Clubs, ";
+    asString += amountOfDiamonds + " Diamonds, ";
+    asString += amountOfHearts + " Hearts, ";
+    asString += amountOfSpades + " Spades";
     return asString;
   }
 }
