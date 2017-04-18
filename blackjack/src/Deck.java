@@ -8,9 +8,9 @@ public class Deck {
   List<Card> cardList = new ArrayList<>();
 
   public Deck(int numberOfCardsInTheDeck) {
-    int colorController = (int) Math.random() * 4;
+    int colorController = (int) (Math.random() * 4);
     for (int i = 0; i < numberOfCardsInTheDeck; ++i) {
-      int randomValue = (int) Math.random() * 13;
+      int randomValue = (int) (Math.random() * 13);
       cardList.add(new Card(colors[colorController++ % 4], values[randomValue]));
     }
   }
