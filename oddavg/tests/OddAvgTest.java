@@ -6,7 +6,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class OddAvgTest {
 
   @Test
-  public void testOddAverage_withEmptyList() throws Exception {
+  public void testOddAverage_withoutOddNumbersInTheGivenList() throws Exception {
     List<Integer> listOfNumbers = new ArrayList<>();
     assertEquals(OddAvg.oddAverage(listOfNumbers), "There is no odd number in the list");
   }
