@@ -4,6 +4,7 @@ import java.util.List;
 public class Deck {
   final static String[] colors = {"Clubs", "Diamonds", "Hearts", "Spades"};
   final static String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+  final static List<Card> fullDeck = Deck.full();
 
   List<Card> actualDeck = new ArrayList<>();
 
@@ -13,6 +14,16 @@ public class Deck {
       int randomValue = (int) (Math.random() * 13);
       actualDeck.add(new Card(colors[colorController++ % 4], values[randomValue]));
     }
+  }
+
+  public static List<Card> full() {
+    List<Card> fullDeck = new ArrayList<>();
+    for (String color : colors) {
+      for (String value : values) {
+        fullDeck.add(new Card(color, value));
+      }
+    }
+    return fullDeck;
   }
 
   @Override
