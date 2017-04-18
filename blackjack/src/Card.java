@@ -11,4 +11,8 @@ public class Card {
   public String getColor() {
     return color;
   }
+
+  public String getValue() {
+    return value;
+  }
 }
