@@ -10,6 +10,8 @@ public class Copy {
     // Read all contents from it and write it to the destination
     if (args.length == 0) {
       System.out.println("copy [source] [destination]");
+    } else if (args.length == 1) {
+      System.out.println("No destination provided");
     }
   }
 }
