@@ -19,4 +19,17 @@ public class OddAvgTest {
     }
     assertEquals(OddAvg.oddAverage(listOfNumbers), 5);
   }
+
+  @Test
+  public void testOddAverage_withDoubleResult() throws Exception {
+    List<Integer> listOfNumbers = new ArrayList<>();
+    for (int i = 0; i < 10; ++i) {
+      if (i == 3) {
+        continue;
+      } else {
+        listOfNumbers.add(i);
+      }
+    }
+    assertEquals(OddAvg.oddAverage(listOfNumbers), 5.5);
+  }
 }
