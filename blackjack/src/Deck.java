@@ -25,14 +25,18 @@ public class Deck {
 
     for (Card card : cardList) {
       switch (card.getColor()) {
-        case "Clubs" : ++amountOfClubs;
-        break;
-        case "Diamonds" : ++amountOfDiamonds;
-        break;
-        case "Hearts" : ++amountOfHearts;
-        break;
-        case "Spades" : ++amountOfSpades;
-        break;
+        case "Clubs":
+          ++amountOfClubs;
+          break;
+        case "Diamonds":
+          ++amountOfDiamonds;
+          break;
+        case "Hearts":
+          ++amountOfHearts;
+          break;
+        case "Spades":
+          ++amountOfSpades;
+          break;
       }
     }
 
@@ -48,5 +52,15 @@ public class Deck {
     Card drawn = cardList.get(0);
     cardList.remove(0);
     return drawn;
+  }
+
+  public void shuffle() {
+    List<Card> temp = new ArrayList<>();
+    do {
+      int randomCard = (int) (Math.random() * cardList.size());
+      temp.add(cardList.get(randomCard));
+      cardList.remove(randomCard);
+    } while (cardList.size() > 0);
+    cardList = temp;
   }
 }

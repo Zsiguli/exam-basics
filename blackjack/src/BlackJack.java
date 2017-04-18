@@ -16,6 +16,7 @@ public class BlackJack {
     System.out.println(deck);
     // Should print out:
     // 12 cards -  3 Clubs, 3 Diamonds, 3 Hearts, 3 Spades
+    deck.shuffle();
     Card drawn = deck.draw();
     System.out.println(drawn);
     System.out.println(deck);
