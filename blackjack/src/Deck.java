@@ -43,4 +43,9 @@ public class Deck {
     asString += amountOfSpades + " Spades";
     return asString;
   }
+
+  public Card draw() {
+    Card drawn = cardList.get(0);
+    return drawn;
+  }
 }
