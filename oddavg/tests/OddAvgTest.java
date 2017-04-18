@@ -8,7 +8,7 @@ public class OddAvgTest {
   @Test
   public void testOddAverage_withoutOddNumbersInTheGivenList() throws Exception {
     List<Integer> listOfNumbers = new ArrayList<>();
-    assertEquals(OddAvg.oddAverage(listOfNumbers), "There is no odd number in the list");
+    assertEquals(OddAvg.oddAverage(listOfNumbers), .0);
   }
 
   @Test
@@ -17,7 +17,7 @@ public class OddAvgTest {
     for (int i = 0; i < 10; ++i) {
       listOfNumbers.add(i);
     }
-    assertEquals(OddAvg.oddAverage(listOfNumbers), 5);
+    assertEquals(OddAvg.oddAverage(listOfNumbers), 5.0);
   }
 
   @Test
