@@ -11,15 +11,20 @@ public class Deck {
   public Deck(int numberOfCardsInTheDeck) {
     List<Card> temp = full();
     int colorController = (int) (Math.random() * 4);
-    for (int i = 0; i < numberOfCardsInTheDeck; ++i) {
+    int cardCounter = 0;
+    while (cardCounter < numberOfCardsInTheDeck) {
       int randomValue = (int) (Math.random() * 13);
       for (Card card : temp) {
         if (card.getColor() == colors[colorController % 4] && card.getValue() == values[randomValue]) {
           temp.remove(card);
           actualDeck.add(card);
           ++colorController;
+          ++cardCounter;
           break;
         }
+      }
+      if (cardCounter == 52) {
+        return;
       }
     }
   }
