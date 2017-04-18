@@ -9,10 +9,18 @@ public class Deck {
   List<Card> actualDeck = new ArrayList<>();
 
   public Deck(int numberOfCardsInTheDeck) {
+    List<Card> temp = full();
     int colorController = (int) (Math.random() * 4);
     for (int i = 0; i < numberOfCardsInTheDeck; ++i) {
       int randomValue = (int) (Math.random() * 13);
-      actualDeck.add(new Card(colors[colorController++ % 4], values[randomValue]));
+      for (Card card : temp) {
+        if (card.getColor() == colors[colorController % 4] && card.getValue() == values[randomValue]) {
+          temp.remove(card);
+          actualDeck.add(card);
+          ++colorController;
+          break;
+        }
+      }
     }
   }
 

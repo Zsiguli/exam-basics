@@ -20,6 +20,9 @@ public class BlackJack {
     Card drawn = deck.draw();
     System.out.println(drawn);
     System.out.println(deck);
+    for (Card card : deck.actualDeck) {
+      System.out.println(card);
+    }
     // Should print out:
     // Queen Spades
     // 11 cards - 3 Clubs, 3 Diamonds, 3 Hearts, 2 Spades
